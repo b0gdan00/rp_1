@@ -28,7 +28,7 @@ class ArduinoSerial:
         print(f"Detecting Arduino on {sys.platform}...")
 
         if sys.platform.startswith('linux'):
-            ports = glob.glob('/dev/ttyUSB*') + glob.glob('/dev/ttyACM*')
+            return "/dev/ttyUSB0"
         elif sys.platform.startswith('win'):
 
             return "COM3" 
