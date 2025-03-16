@@ -35,18 +35,6 @@ class ArduinoSerial:
         else:
             return None  # Unsupported system
 
-        for port in ports:
-            try:
-                with serial.Serial(port, 9600, timeout=1) as ser:
-                    time.sleep(1)  # Wait for device response
-                    ser.write(b'{"command":"ping"}\n')
-                    response = ser.readline().decode().strip()
-                    if "pong" in response:  # Expecting Arduino to respond with "pong"
-                        return port
-            except (OSError, serial.SerialException):
-                continue
-
-        return None
 
     def send_command(self, command, value=0):
         """Send a JSON command to Arduino."""
