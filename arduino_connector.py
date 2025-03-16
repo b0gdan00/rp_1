@@ -2,8 +2,10 @@ import serial
 import json
 import time
 import threading
-import glob
 import sys
+
+
+
 
 class ArduinoSerial:
     def __init__(self, port=None, baud_rate=9600, timeout=1):

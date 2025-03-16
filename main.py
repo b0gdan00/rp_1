@@ -5,16 +5,13 @@ import time
 
 
 
-
-
-
 bot = TeleBot('7784381573:AAHKYDRFrFqK7g5qbYn_BiEBk9qGWS_g3nA')
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id, 'Привет Аня')
     arduino = ArduinoSerial()  # Automatically detect the port
     print(f"Connected to Arduino on {arduino.port}")
-    arduino.start_listener()
+    # arduino.start_listener()
     arduino.send_command("ping", 0)
     print(arduino.get_response())
     
