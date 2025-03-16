@@ -3,25 +3,28 @@ from arduino_connector import ArduinoSerial
 import time
 
 
-
+arduino = ArduinoSerial()
 
 bot = TeleBot('7784381573:AAHKYDRFrFqK7g5qbYn_BiEBk9qGWS_g3nA')
+
+
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, 'Привет Аня')
-    arduino = ArduinoSerial()  # Automatically detect the port
-    print(f"Connected to Arduino on {arduino.port}")
-    # arduino.start_listener()
-    arduino.send_command("ping", 0)
-    print(arduino.get_response())
-    
-    arduino.send_command("set_led", 1)
-    time.sleep(3)
-    arduino.send_command("set_led", 0)
-    time.sleep(3)
-    arduino.send_command("test_data", 0)
-    print(arduino.get_response())
-    bot.send_message(message.chat.id, str(arduino.get_response()))
+    bot.send_message(message.chat.id, arduino.send_command('led ?'))
     
     
-bot.infinity_polling()
+@bot.message_handler(commands=['led'])
+def start(message):
+    print(arduino.send_command('led ?'))
+    if arduino.send_command('led ?') == "ON":
+        bot.send_message(message.chat.id, arduino.send_command('led off'))
+    else:
+        bot.send_message(message.chat.id, arduino.send_command('led on'))
+    
+    
+try:    
+    bot.infinity_polling()
+except:
+    print('Error')
+finally:
+    arduino.close()
