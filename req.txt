@@ -2,3 +2,4 @@ rich
 fastapi
 fastui
 pytelegrambotapi
+pyserial
