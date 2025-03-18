@@ -5,3 +5,5 @@ pytelegrambotapi
 pyserial
 pyserial
 uvicorn 
+streamlit
+flask
