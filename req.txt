@@ -1,9 +1,5 @@
-rich
+flet
+pydantic
 fastapi
-fastui
-pytelegrambotapi
+uvicorn
 pyserial
-pyserial
-uvicorn 
-streamlit
-flask
