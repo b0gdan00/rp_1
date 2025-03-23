@@ -1,3 +1,8 @@
+body {
+    margin-top: 40px;
+    padding: 0;
+}
+
 .square {
     width: 200px;
     height: 300px;
@@ -10,6 +15,7 @@
 
 .lamp {
     /* background-color: blueviolet; */
+    top: 5px;
     width: 40px;
     height: 40px;
     border-radius: 100px;
@@ -136,4 +142,21 @@
     background-color: rgb(185, 185, 185);
     right: -30px;
     border: 1px solid black;
+}
+
+.lebel-line {
+    position: absolute;
+    width: 400px;
+    height: 1px;
+    background-color: black;
+    top: 50%;
+    left: 100%
+}
+
+.lebel-line#co2 {
+    width: 290px;
+}
+
+.lebel-line#ten {
+    width: 385px;
 }
