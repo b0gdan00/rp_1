@@ -15,6 +15,7 @@
             <div class="square">
                 <div class="lamp">
                     <div class="lebel-line"></div>
+                    <button></button>
                 </div>
                 <div class="ten">
                     <div class="lines">
@@ -24,8 +25,9 @@
                         <div class="line"></div>
                         <div class="line"></div>
                     </div>
-                    <div class="lebel-line" id="ten"></div>
-
+                    <div
+                        class="lebel-line"
+                        id="ten"></div>
                 </div>
                 <div class="footer"></div>
                 <div class="left-squares">
@@ -35,9 +37,29 @@
                     <div class="square-4"></div>
                 </div>
                 <div class="right-co2">
-                    <div class="lebel-line" id="co2"></div>
+                    <div
+                        class="lebel-line"
+                        id="co2"></div>
+                        <button></button>
                 </div>
+
+                <div class="right-control-panel"></div>
             </div>
         </center>
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('button').click(function () {
+                const button = $(this);
+                const currentColor = button.css('background-color');
+
+                if (currentColor === 'rgb(255, 255, 255)') { 
+                    button.css('background-color', 'rgb(46, 255, 46)'); 
+                } else {
+                    button.css('background-color', 'rgb(255, 255, 255)');
+                }
+            });
+        });
+    </script>
 </html>

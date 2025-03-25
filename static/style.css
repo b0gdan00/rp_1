@@ -1,5 +1,5 @@
 body {
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 0;
 }
 
@@ -159,4 +159,39 @@ body {
 
 .lebel-line#ten {
     width: 385px;
+}
+
+.right-control-panel {
+    position: absolute;
+    width: 30px;
+    height: 120%;
+    background-color: rgb(199, 199, 199);
+    left: 150%;
+    top: -10%;
+}
+
+.lamp button {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    left: 195px;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 20px;
+    
+}
+button {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.right-co2 button {
+    top: -18px;
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    left: 95px;
+    z-index: 1;
+    border: 1px solid black;
+    border-radius: 20px;
 }
